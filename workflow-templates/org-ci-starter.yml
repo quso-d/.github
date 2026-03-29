@@ -1,1 +1,22 @@
-
+name: QUSO Demo Organization NodeJS CI
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      - name: Setup Node.js (20.x)
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Tests
+        run: npm test --if-present
+      - name: Generate Coverage
+        run: npm run coverage --if-present
