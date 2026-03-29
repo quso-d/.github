@@ -1,6 +1,5 @@
 {
   "name": "QUSO Demo Organization NodeJS CI",
   "description": "Starter workflow for Node.js projects.",
-  "iconName": "quso-icon.png",
   "categories": ["NPM Config"]
 }
